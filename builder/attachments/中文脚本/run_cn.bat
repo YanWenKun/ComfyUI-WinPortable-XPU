@@ -7,7 +7,7 @@ rem set HTTPS_PROXY=http://localhost:1080
 rem set HF_TOKEN=
 
 @REM 该环境变量配置 PIP 使用国内镜像站点。
-set PIP_INDEX_URL=https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple
+set PIP_INDEX_URL=https://mirrors.cernet.edu.cn/pypi/web/simple
 
 @REM 该环境变量配置 HuggingFace Hub 使用国内镜像站点。
 set HF_ENDPOINT=https://hf-mirror.com
