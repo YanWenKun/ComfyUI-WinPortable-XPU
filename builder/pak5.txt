@@ -2,10 +2,13 @@
 addict
 aiohttp
 albumentations
+av
 cachetools
+chardet
 clip-interrogator
 color-matcher
 colour-science
+comfyui-frontend-package
 deepdiff
 dill
 einops
@@ -44,6 +47,8 @@ trimesh[easy]
 typer
 typing-extensions
 ultralytics
+uv
 webcolors
 yacs
 yapf
+yarl
