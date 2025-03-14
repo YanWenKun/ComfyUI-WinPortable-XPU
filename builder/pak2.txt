@@ -1,4 +1,2 @@
---index-url https://download.pytorch.org/whl/xpu
-torch
-torchvision
-torchaudio
+Cython
+cmake
