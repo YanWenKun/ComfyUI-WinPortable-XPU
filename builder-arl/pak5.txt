@@ -8,7 +8,6 @@ chardet
 clip-interrogator
 color-matcher
 colour-science
-comfyui-frontend-package
 deepdiff
 dill
 einops
