@@ -1,3 +1,6 @@
+@echo off
+setlocal
+
 @REM 如需配置代理，取消注释（移除行首的 'rem '）并编辑下两行环境变量。
 rem set HTTP_PROXY=http://localhost:1080
 rem set HTTPS_PROXY=http://localhost:1080
@@ -28,4 +31,5 @@ set PYTHONPYCACHEPREFIX=%~dp0\pycache
 @REM 如在用 40 系显卡，可添加 --fast 开启实验性高性能模式。
 .\python_standalone\python.exe -s ComfyUI\main.py --windows-standalone-build
 
+endlocal
 pause

@@ -1,3 +1,6 @@
+@echo off
+setlocal
+
 @REM To set proxy, edit and uncomment the two lines below (remove 'rem ' in the beginning of line).
 rem set HTTP_PROXY=http://localhost:1080
 rem set HTTPS_PROXY=http://localhost:1080
@@ -25,4 +28,5 @@ set PYTHONPYCACHEPREFIX=%~dp0\pycache
 @REM If you don't want the browser to open automatically, add [ --disable-auto-launch ] to the end of the line below.
 .\python_standalone\python.exe -s ComfyUI\main.py --windows-standalone-build 
 
+endlocal
 pause
