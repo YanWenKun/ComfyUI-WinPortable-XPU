@@ -1,0 +1,5 @@
+# Make sure use Numpy 1
+numpy==1.26.4
+
+--extra-index-url https://pytorch-extension.intel.com/release-whl/stable/xpu/us/
+intel-extension-for-pytorch==2.6.10+xpu
