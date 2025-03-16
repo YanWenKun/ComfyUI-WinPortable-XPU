@@ -1,5 +1,8 @@
-@echo off
+@echo on
 setlocal
+
+@REM If you don't want the browser to open automatically, add [ --disable-auto-launch ] after the last argument.
+set "EXTRA_ARGS=--disable-smart-memory"
 
 @REM To set proxy, edit and uncomment the two lines below (remove 'rem ' in the beginning of line).
 rem set HTTP_PROXY=http://localhost:1080
@@ -13,6 +16,9 @@ rem set HF_ENDPOINT=https://hf-mirror.com
 @REM https://huggingface.co/settings/tokens
 rem set HF_TOKEN=
 
+@REM ==========================================================================
+@REM The following content generally does not require user modification.
+
 @REM This command redirects HuggingFace-Hub to download model files in this folder.
 set HF_HUB_CACHE=%~dp0\HuggingFaceHub
 
@@ -25,8 +31,7 @@ set PATH=%PATH%;%~dp0\python_standalone\Scripts
 @REM This command will let the .pyc files to be stored in one place.
 set PYTHONPYCACHEPREFIX=%~dp0\pycache
 
-@REM If you don't want the browser to open automatically, add [ --disable-auto-launch ] to the end of the line below.
-.\python_standalone\python.exe -s ComfyUI\main.py --windows-standalone-build 
+.\python_standalone\python.exe -s ComfyUI\main.py --windows-standalone-build %EXTRA_ARGS%
 
 endlocal
 pause
