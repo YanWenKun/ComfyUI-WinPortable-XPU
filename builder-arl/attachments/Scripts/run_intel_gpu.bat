@@ -26,7 +26,7 @@ set HF_HUB_CACHE=%~dp0\HuggingFaceHub
 set TORCH_HOME=%~dp0\TorchHome
 
 @REM This command will set PATH environment variable.
-set PATH=%PATH%;%~dp0\python_standalone\Scripts
+set PATH=%PATH%;%~dp0\MinGit\cmd;%~dp0\python_standalone\Scripts
 
 @REM This command will let the .pyc files to be stored in one place.
 set PYTHONPYCACHEPREFIX=%~dp0\pycache
