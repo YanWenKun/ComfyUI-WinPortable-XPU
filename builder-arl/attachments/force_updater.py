@@ -40,9 +40,6 @@ def main():
     )
     args = parser.parse_args()
 
-    # Configure PATH environment variable
-    os.environ['PATH'] += os.pathsep + os.path.join(os.getcwd(), 'MinGit', 'cmd')
-
     # Get the total number of folders in custom_nodes directory
     custom_nodes = [D for D in os.listdir(args.custom_nodes_dir) if os.path.isdir(os.path.join(args.custom_nodes_dir, D))]
     total_tasks = len(custom_nodes) + 1  # Include ComfyUI root directory

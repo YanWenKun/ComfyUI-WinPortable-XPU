@@ -41,9 +41,6 @@ def main():
     )
     args = parser.parse_args()
 
-    # 配置 PATH 环境变量
-    os.environ['PATH'] += os.pathsep + os.path.join(os.getcwd(), 'MinGit', 'cmd')
-
     # 获取 custom_nodes 目录下的文件夹总数
     custom_nodes = [D for D in os.listdir(args.custom_nodes_dir) if os.path.isdir(os.path.join(args.custom_nodes_dir, D))]
     total_tasks = len(custom_nodes) + 1  # 包括 ComfyUI 根目录

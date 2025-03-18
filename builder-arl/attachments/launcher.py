@@ -123,7 +123,7 @@ def main():
     # Set HuggingFace cache directory
     os.environ['HF_HUB_CACHE'] = os.path.join(os.getcwd(), 'HuggingFaceHub')
     os.environ['TORCH_HOME'] = os.path.join(os.getcwd(), 'TorchHome')
-    os.environ['PYTHONPYCACHEPREFIX'] = os.path.join(os.getcwd(), 'pycache')
+    os.environ['PYTHONPYCACHEPREFIX'] = os.path.join(os.getcwd(), 'pycache') # Duplicate, but keeping this line for code readability.
 
     # Configure PATH environment variable
     os.environ['PATH'] += os.pathsep + os.path.join(os.getcwd(), 'MinGit', 'cmd')
