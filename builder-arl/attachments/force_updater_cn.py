@@ -87,26 +87,32 @@ def set_url_and_pull(repo_path):
         repo = git.Repo(repo_path)
         git_remote_url = repo.remotes.origin.url
 
-        if re.match(r'^https:\/\/(gh-proxy\.com|ghfast\.top)\/.*\.git$', git_remote_url):
+        # 判断是否是国内镜像地址
+        if git_remote_url.startswith(('https://gh-proxy.com/', 'https://ghfast.top/')):
             print(f"正在更新: {repo_path}")
             repo.git.reset('--hard')
             repo.remotes.origin.pull()
             print(f"更新完成: {repo_path}")
-        elif re.match(r'^https:\/\/github\.com\/.*\.git$', git_remote_url):
+        # 判断是否是 GitHub 地址
+        elif git_remote_url.startswith('https://github.com/'):
             print(f"正在修改URL并更新: {repo_path}")
             repo.git.reset('--hard')
-            new_url = 'https://ghfast.top/' + git_remote_url
+            # 将 GitHub 地址替换为国内镜像地址
+            new_url = git_remote_url.replace('https://github.com/', 'https://ghfast.top/https://github.com/')
             repo.remotes.origin.set_url(new_url)
             repo.remotes.origin.pull()
             print(f"更新完成: {repo_path}")
-        elif re.match(r'^https:\/\/ghp\.ci\/(https:\/\/github\.com\/.*\.git)$', git_remote_url):
+        # 判断是否是 ghp.ci 代理地址
+        elif git_remote_url.startswith('https://ghp.ci/'):
             print(f"正在修改URL并更新: {repo_path}")
-            extracted_url = re.match(r'^https:\/\/ghp\.ci\/(https:\/\/github\.com\/.*\.git)$', git_remote_url).group(1)
-            new_url = 'https://ghfast.top/' + extracted_url
             repo.git.reset('--hard')
+            # 更新已失效镜像地址
+            new_url = git_remote_url.replace('https://ghp.ci/', 'https://ghfast.top/')
             repo.remotes.origin.set_url(new_url)
             repo.remotes.origin.pull()
             print(f"更新完成: {repo_path}")
+        else:
+            print(f"忽略未知 URL 格式的仓库: {repo_path}")
     except Exception as e:
         print(f"处理 {repo_path} 时出错: {e}")
         raise  # 重新抛出异常，让上层捕获并终止程序
