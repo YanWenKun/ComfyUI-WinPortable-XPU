@@ -15,7 +15,6 @@ filelock
 GitPython
 imageio-ffmpeg
 importlib-metadata
-mediapipe
 mss
 numba
 numexpr
