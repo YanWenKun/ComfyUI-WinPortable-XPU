@@ -25,6 +25,14 @@ def main():
                     "后续可能需要在 Manager 中点击 Try Fix 修复个别节点。"
     )
 
+    # 添加镜像地址参数
+    parser.add_argument(
+        'mirror_url',  # 参数名称
+        metavar='镜像站点',  # 参数显示名称
+        help='用于访问 GitHub 的镜像／代理站点（例如：https://ghfast.top 或 https://gh-proxy.com）',  # 帮助信息
+        default='https://ghfast.top',  # 设置默认值
+    )
+
     # 设置默认目录
     default_comfyui_dir = os.path.join(os.getcwd(), 'ComfyUI')
     default_custom_nodes_dir = os.path.join(os.getcwd(), 'ComfyUI', 'custom_nodes')
@@ -45,6 +53,9 @@ def main():
     )
     args = parser.parse_args()
 
+    # 获取镜像地址
+    mirror_url = args.mirror_url
+
     # 获取 custom_nodes 目录下的文件夹总数
     custom_nodes = [D for D in os.listdir(args.custom_nodes_dir) if os.path.isdir(os.path.join(args.custom_nodes_dir, D))]
     total_tasks = len(custom_nodes) + 1  # 包括 ComfyUI 根目录
@@ -60,7 +71,9 @@ def main():
 
     # 更新主仓库
     try:
-        set_url_and_pull(args.comfyui_dir)
+        print(f"ComfyUI 根目录:  {args.comfyui_dir}")
+        print(f"custom_nodes 目录： {args.custom_nodes_dir}")
+        set_url_and_pull(args.comfyui_dir, mirror_url)
         update_progress()
     except Exception as e:
         print(f"错误: {e}")
@@ -71,7 +84,7 @@ def main():
         futures = []
         for D in custom_nodes:
             dir_path = os.path.join(args.custom_nodes_dir, D)
-            futures.append(executor.submit(set_url_and_pull, dir_path))
+            futures.append(executor.submit(set_url_and_pull, dir_path, mirror_url))
 
         # 等待所有任务完成
         for future in futures:
@@ -82,39 +95,47 @@ def main():
                 print(f"错误: {e}")
                 sys.exit(1)  # 终止程序
 
-def set_url_and_pull(repo_path):
+def set_url_and_pull(repo_path, mirror_url):
     try:
         repo = git.Repo(repo_path)
         git_remote_url = repo.remotes.origin.url
 
-        # 判断是否是国内镜像地址
-        if git_remote_url.startswith(('https://gh-proxy.com/', 'https://ghfast.top/')):
-            print(f"正在更新: {repo_path}")
+        # 提取文件夹名称
+        repo_foldername = os.path.basename(repo_path)
+
+        # 确保 URL 以 .git 结尾
+        if not git_remote_url.endswith('.git'):
+            print(f"忽略 {repo_foldername} ，非标准 Git 仓库（仓库地址不以 .git 结尾）： {git_remote_url}")
+            return
+
+        # 1. 直接下载：如果 remote URL 以 mirror_url 开头，则直接 pull
+        if git_remote_url.startswith(f'{mirror_url}/'):
+            print(f"正在更新: {repo_foldername}")
             repo.git.reset('--hard')
             repo.remotes.origin.pull()
-            print(f"更新完成: {repo_path}")
-        # 判断是否是 GitHub 地址
+            print(f"更新完成: {repo_foldername}")
+        # 2. 添加镜像（代理）：如果 remote URL 以 https://github.com/ 开头，则在开头添加 mirror_url
         elif git_remote_url.startswith('https://github.com/'):
-            print(f"正在修改URL并更新: {repo_path}")
+            print(f"正在修改 GitHub URL 并更新: {repo_foldername}")
+            new_url = f'{mirror_url}/{git_remote_url}'
             repo.git.reset('--hard')
-            # 将 GitHub 地址替换为国内镜像地址
-            new_url = git_remote_url.replace('https://github.com/', 'https://ghfast.top/https://github.com/')
             repo.remotes.origin.set_url(new_url)
             repo.remotes.origin.pull()
-            print(f"更新完成: {repo_path}")
-        # 判断是否是 ghp.ci 代理地址
-        elif git_remote_url.startswith('https://ghp.ci/'):
-            print(f"正在修改URL并更新: {repo_path}")
+            print(f"更新完成: {repo_foldername}")
+        # 3. 替换镜像（代理）：如果 remote URL 包含 /https://github.com/，则替换镜像站点
+        elif '/https://github.com/' in git_remote_url:
+            print(f"正在修改镜像 URL 并更新: {repo_foldername}")
+            # 提取 https://github.com/ 之后的部分
+            github_part = git_remote_url.split('/https://github.com/')[1]
+            new_url = f'{mirror_url}/https://github.com/{github_part}'
             repo.git.reset('--hard')
-            # 更新已失效镜像地址
-            new_url = git_remote_url.replace('https://ghp.ci/', 'https://ghfast.top/')
             repo.remotes.origin.set_url(new_url)
             repo.remotes.origin.pull()
-            print(f"更新完成: {repo_path}")
+            print(f"更新完成: {repo_foldername}")
         else:
-            print(f"忽略未知 URL 格式的仓库: {repo_path}")
+            print(f"忽略 {repo_foldername}，未知 URL 格式的仓库: {git_remote_url}")
     except Exception as e:
-        print(f"处理 {repo_path} 时出错: {e}")
+        print(f"处理 {repo_foldername} 时出错: {e}")
         raise  # 重新抛出异常，让上层捕获并终止程序
 
 if __name__ == "__main__":
