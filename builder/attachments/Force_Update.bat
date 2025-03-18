@@ -1,0 +1,1 @@
+.\python_standalone\python.exe -s force_updater.py
