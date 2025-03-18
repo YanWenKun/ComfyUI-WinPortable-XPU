@@ -19,7 +19,11 @@ from gooey import Gooey, GooeyParser
 )
 def main():
     # 创建 Gooey 参数解析器
-    parser = GooeyParser(description="强制更新 ComfyUI 及其自定义节点，且将远程 GitHub 地址替换为国内镜像")
+    parser = GooeyParser(
+        description="强制更新 ComfyUI 及其自定义节点，且将远程 GitHub 地址替换为国内镜像。\n\n"
+                    "提示：强制更新仅处理 Git 仓库， 不处理 Python 依赖包，\n"
+                    "后续可能需要在 Manager 中点击 Try Fix 修复个别节点。"
+    )
 
     # 设置默认目录
     default_comfyui_dir = os.path.join(os.getcwd(), 'ComfyUI')

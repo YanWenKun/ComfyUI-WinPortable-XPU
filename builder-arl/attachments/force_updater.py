@@ -18,7 +18,11 @@ from gooey import Gooey, GooeyParser
 )
 def main():
     # Create Gooey argument parser
-    parser = GooeyParser(description="Force update ComfyUI and its custom nodes")
+    parser = GooeyParser(
+        description="Force update ComfyUI and its custom nodes.\n\n"
+                    "Note: The force update only handles Git repositories and does not manage Python dependencies.\n"
+                    "You may need to click 'Try Fix' in the Manager later to fix individual nodes."
+    )
 
     # Set default directories
     default_comfyui_dir = os.path.join(os.getcwd(), 'ComfyUI')
