@@ -8,13 +8,12 @@ from gooey import Gooey, GooeyParser
 @Gooey(
     program_name="ComfyUI 强制更新工具",  # 程序名称
     language='chinese',
-    progress_regex=r"^进度: (\d+)%$",  # 进度条正则表达式
-    progress_expr="进度: {0}%",  # 进度条显示格式
-    timing_options={
-        'show_time_remaining': False,  # 不显示剩余时间
-        'show_elapsed_time': True,  # 显示已过时间
-    },
+    progress_regex=r"^进度: (\d+)/(\d+)$",  # 进度条正则表达式
+    progress_expr="x[0] / x[1] * 100",  # 进度条显示格式
     disable_progress_bar_animation=True,  # 禁用进度条动画
+    timing_options={
+        'show_time_remaining': True,
+    },
     clear_before_run=True,  # 运行前清空控制台
 )
 def main():
@@ -65,8 +64,7 @@ def main():
     def update_progress():
         nonlocal completed_tasks
         completed_tasks += 1
-        progress = int((completed_tasks / total_tasks) * 100)
-        print(f"进度: {progress}%")  # Gooey 会根据正则表达式更新进度条
+        print(f"进度: {completed_tasks}/{total_tasks}")  # Gooey 会根据正则表达式更新进度条
         sys.stdout.flush()  # 强制刷新输出，确保 Gooey 捕获到进度信息
 
     # 更新主仓库

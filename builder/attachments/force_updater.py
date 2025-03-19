@@ -7,13 +7,12 @@ from gooey import Gooey, GooeyParser
 
 @Gooey(
     program_name="ComfyUI Force Update Tool",  # Program name
-    progress_regex=r"^Progress: (\d+)%$",  # Progress bar regex
-    progress_expr="Progress: {0}%",  # Progress bar expression
+    progress_regex=r"^Progress: (\d+)/(\d+)$",  # Progress bar regex
+    progress_expr="x[0] / x[1] * 100",  # Progress bar expression
+    disable_progress_bar_animation=True,
     timing_options={
-        'show_time_remaining': False,  # Do not show remaining time
-        'show_elapsed_time': True,  # Show elapsed time
+        'show_time_remaining': True,
     },
-    disable_progress_bar_animation=True,  # Disable progress bar animation
     clear_before_run=True,  # Clear console before running
 )
 def main():
@@ -53,8 +52,7 @@ def main():
     def update_progress():
         nonlocal completed_tasks
         completed_tasks += 1
-        progress = int((completed_tasks / total_tasks) * 100)
-        print(f"Progress: {progress}%")  # Gooey will update the progress bar based on this output
+        print(f"Progress: {completed_tasks}/{total_tasks}")  # Gooey will update the progress bar based on this output
         sys.stdout.flush()  # Force flush output to ensure Gooey captures the progress
 
     # Update main repository
