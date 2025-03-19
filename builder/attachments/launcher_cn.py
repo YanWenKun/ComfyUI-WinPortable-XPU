@@ -133,7 +133,7 @@ def main():
                             default=saved_config.get("lowvram", False) if saved_config else False)
     launch_tab.add_argument('--extra_args', 
                             metavar='额外启动参数', 
-                            help='参考 ComfyUI 的 cli_args.py， 添加额外的启动参数 （例如 --cpu 启用仅 CPU 模式）',
+                            help='参数列表在 ComfyUI 的 cli_args.py， 注意添加空格 （例如 " --cpu" 启用仅 CPU 模式）',
                             default=saved_config.get("extra_args", "") if saved_config else '')
     
     args = parser.parse_args()
@@ -187,7 +187,9 @@ def main():
 
     # 添加用户自定义的额外参数
     if args.extra_args:
-        extra_args = args.extra_args.split()  # 将字符串按空格分割为列表
+        # 使用 shlex.split 来正确处理带空格的参数
+        import shlex
+        extra_args = shlex.split(args.extra_args)  # 使用 shlex.split 解析参数
         command.extend(extra_args)
 
     # 启动 ComfyUI

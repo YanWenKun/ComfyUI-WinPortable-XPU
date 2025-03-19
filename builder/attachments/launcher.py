@@ -98,7 +98,7 @@ def main():
                             default=saved_config.get("lowvram", False) if saved_config else False)
     launch_tab.add_argument('--extra_args', 
                             metavar='Additional Launch Arguments', 
-                            help='Refer to ComfyUI’s cli_args.py, add extra launch parameters (e.g., --cpu for CPU-only mode)',
+                            help='Refer to ComfyUI’s cli_args.py, add extra launch parameters (e.g., " --cpu" for CPU-only mode), mind spaces',
                             default=saved_config.get("extra_args", "") if saved_config else '')
     
     args = parser.parse_args()
@@ -148,7 +148,8 @@ def main():
 
     # Add user-defined extra parameters
     if args.extra_args:
-        extra_args = args.extra_args.split()  # Split the string into a list by spaces
+        import shlex
+        extra_args = shlex.split(args.extra_args)
         command.extend(extra_args)
 
     # Launch ComfyUI
