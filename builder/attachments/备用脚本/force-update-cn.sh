@@ -7,7 +7,7 @@ set -eu
 function set_url_and_pull () {
     git_remote_url=$(git -C "$1" remote get-url origin) ;
 
-    if [[ $git_remote_url =~ ^(https:\/\/gh-proxy\.com\/)(.*)(\.git)$ ]]; then
+    if [[ $git_remote_url =~ ^(https:\/\/)(gh-proxy\.com|ghfast\.top)(\/)(.*)(\.git)$ ]]; then
         echo "正在更新: $1" ;
         git -C "$1" reset --hard ;
         git -C "$1" pull --ff-only ;
