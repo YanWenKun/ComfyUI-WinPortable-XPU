@@ -21,6 +21,7 @@ def save_config(args):
         # "fast_mode": args.fast_mode,
         "disable_smart_memory": args.disable_smart_memory,
         "lowvram": args.lowvram,
+        "disable_ipex_optimize": args.disable_ipex_optimize,
         "extra_args": args.extra_args,
     }
     with open(CONFIG_FILE, "w") as f:
@@ -94,11 +95,16 @@ def main():
     launch_tab.add_argument('--lowvram', 
                             metavar='Low VRAM Mode', 
                             action='store_true',
-                            help='More conservative VRAM usage, recommended only when VRAM is insufficient (--lowvram)',
+                            help='More conservative VRAM usage, reduce speed, recommended only when VRAM is insufficient (--lowvram)',
                             default=saved_config.get("lowvram", False) if saved_config else False)
+    launch_tab.add_argument('--disable_ipex_optimize', 
+                            metavar='Disable IPEX Optimization', 
+                            action='store_true',
+                            help='Disable Intel Extension for PyTorch Optimization when loading models, for debugging (--disable-ipex-optimize)',
+                            default=saved_config.get("disable_ipex_optimize", False) if saved_config else False)
     launch_tab.add_argument('--extra_args', 
                             metavar='Additional Launch Arguments', 
-                            help='Refer to ComfyUI’s cli_args.py, add extra launch parameters (e.g., --cpu for CPU-only mode)',
+                            help='Refer to ComfyUI’s cli_args.py, add extra launch parameters (e.g., " --cpu" for CPU-only mode), mind spaces',
                             default=saved_config.get("extra_args", "") if saved_config else '')
     
     args = parser.parse_args()
@@ -145,10 +151,13 @@ def main():
         command.append('--disable-smart-memory')
     if args.lowvram:
         command.append('--lowvram')
+    if args.disable_ipex_optimize:
+        command.append('--disable-ipex-optimize')
 
     # Add user-defined extra parameters
     if args.extra_args:
-        extra_args = args.extra_args.split()  # Split the string into a list by spaces
+        import shlex
+        extra_args = shlex.split(args.extra_args)
         command.extend(extra_args)
 
     # Launch ComfyUI

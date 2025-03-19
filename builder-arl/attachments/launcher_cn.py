@@ -21,6 +21,7 @@ def save_config(args):
         # "fast_mode": args.fast_mode,
         "disable_smart_memory": args.disable_smart_memory,
         "lowvram": args.lowvram,
+        "disable_ipex_optimize": args.disable_ipex_optimize,
         "extra_args": args.extra_args,
     }
     with open(CONFIG_FILE, "w") as f:
@@ -129,11 +130,16 @@ def main():
     launch_tab.add_argument('--lowvram', 
                             metavar='低显存模式', 
                             action='store_true',
-                            help='更“抠门”地使用显存， 仅建议显存不足时开启 (--lowvram)',
+                            help='更“节约”地使用显存， 牺牲速度， 仅建议显存不足时开启 (--lowvram)',
                             default=saved_config.get("lowvram", False) if saved_config else False)
+    launch_tab.add_argument('--disable_ipex_optimize', 
+                            metavar='禁用 IPEX 优化', 
+                            action='store_true',
+                            help='禁用 Intel Extension for PyTorch 优化， 便于排错 (--disable-ipex-optimize)',
+                            default=saved_config.get("disable_ipex_optimize", False) if saved_config else False)
     launch_tab.add_argument('--extra_args', 
                             metavar='额外启动参数', 
-                            help='参考 ComfyUI 的 cli_args.py， 添加额外的启动参数 （例如 --cpu 启用仅 CPU 模式）',
+                            help='参数列表在 ComfyUI 的 cli_args.py， 注意添加空格 （例如 " --cpu" 启用仅 CPU 模式）',
                             default=saved_config.get("extra_args", "") if saved_config else '')
     
     args = parser.parse_args()
@@ -184,10 +190,14 @@ def main():
         command.append('--disable-smart-memory')
     if args.lowvram:
         command.append('--lowvram')
+    if args.disable_ipex_optimize:
+        command.append('--disable-ipex-optimize')
 
     # 添加用户自定义的额外参数
     if args.extra_args:
-        extra_args = args.extra_args.split()  # 将字符串按空格分割为列表
+        # 使用 shlex.split 来正确处理带空格的参数
+        import shlex
+        extra_args = shlex.split(args.extra_args)  # 使用 shlex.split 解析参数
         command.extend(extra_args)
 
     # 启动 ComfyUI
