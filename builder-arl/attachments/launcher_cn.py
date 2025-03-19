@@ -18,7 +18,6 @@ def save_config(args):
         "pip_index_url": args.pip_index_url,
         "hf_endpoint": args.hf_endpoint,
         "disable_auto_launch": args.disable_auto_launch,
-        # "fast_mode": args.fast_mode,
         "disable_smart_memory": args.disable_smart_memory,
         "lowvram": args.lowvram,
         "disable_ipex_optimize": args.disable_ipex_optimize,
@@ -117,11 +116,6 @@ def main():
                             action='store_true',
                             help='禁止程序在启动后自动打开浏览器 (--disable-auto-launch)',
                             default=saved_config.get("disable_auto_launch", False) if saved_config else False)
-    # launch_tab.add_argument('--fast_mode', 
-    #                         metavar='高性能模式', 
-    #                         action='store_true',
-    #                         help='启用实验性高性能模式（适用于 40 系列显卡）',
-    #                         default=saved_config.get("fast_mode", False) if saved_config else False)
     launch_tab.add_argument('--disable_smart_memory', 
                             metavar='禁用智能内存管理', 
                             action='store_true',
@@ -184,8 +178,6 @@ def main():
 
     if args.disable_auto_launch:
         command.append('--disable-auto-launch')
-    # if args.fast_mode:
-    #     command.append('--fast')
     if args.disable_smart_memory:
         command.append('--disable-smart-memory')
     if args.lowvram:
