@@ -62,15 +62,15 @@ https://github.com/YanWenKun/ComfyUI-WinPortable-XPU/releases[发布页面]
 
 ** **Arrow Lake-H（Ultra 2 笔记本处理器）**用户：
 
-*** https://github.com/YanWenKun/ComfyUI-WinPortable-XPU/releases/download/r1-arl/ComfyUI_Windows_portable_arl.7z.001[ComfyUI_Windows_portable_arl.7z.001]
+*** https://github.com/YanWenKun/ComfyUI-WinPortable-XPU/releases/download/r2-arl/ComfyUI_Windows_portable_arl.7z.001[ComfyUI_Windows_portable_arl.7z.001]
 
-*** https://github.com/YanWenKun/ComfyUI-WinPortable-XPU/releases/download/r1-arl/models.zip.001[models.zip.001] （模型包，只需下载一次，以后升级无需重复下载）
+*** https://github.com/YanWenKun/ComfyUI-WinPortable-XPU/releases/download/r2-arl/models.zip.001[models.zip.001] （模型包，只需下载一次，以后升级无需重复下载）
 
 ** **其他所有型号**用户：
 
-*** https://github.com/YanWenKun/ComfyUI-WinPortable-XPU/releases/download/r1-xpu/ComfyUI_Windows_portable_xpu.7z.001[ComfyUI_Windows_portable_xpu.7z.001]
+*** https://github.com/YanWenKun/ComfyUI-WinPortable-XPU/releases/download/r2-xpu/ComfyUI_Windows_portable_xpu.7z.001[ComfyUI_Windows_portable_xpu.7z.001]
 
-*** https://github.com/YanWenKun/ComfyUI-WinPortable-XPU/releases/download/r1-xpu/models.zip.001[models.zip.001] （模型包，只需下载一次，以后升级无需重复下载）
+*** https://github.com/YanWenKun/ComfyUI-WinPortable-XPU/releases/download/r2-xpu/models.zip.001[models.zip.001] （模型包，只需下载一次，以后升级无需重复下载）
 
 . 打开 `.7z.001` 并解压（建议不要放在太深的目录），打开 `.zip.001` 并解压到同一个目录
 
