@@ -69,9 +69,9 @@ or use the direct download links:
 
 ** **All Other Models** users:
 
-*** https://github.com/YanWenKun/ComfyUI-WinPortable-XPU/releases/download/r1-xpu/ComfyUI_Windows_portable_xpu.7z.001[ComfyUI_Windows_portable_xpu.7z.001]
+*** https://github.com/YanWenKun/ComfyUI-WinPortable-XPU/releases/download/r2-xpu/ComfyUI_Windows_portable_xpu.7z.001[ComfyUI_Windows_portable_xpu.7z.001]
 
-*** https://github.com/YanWenKun/ComfyUI-WinPortable-XPU/releases/download/r1-xpu/models.zip.001[models.zip.001] (Model package, only needs to be downloaded once, no need to re-download for future updates)
+*** https://github.com/YanWenKun/ComfyUI-WinPortable-XPU/releases/download/r2-xpu/models.zip.001[models.zip.001] (Model package, only needs to be downloaded once, no need to re-download for future updates)
 
 . Extract the `.7z.001` file (recommended not to place it in a deep directory), and extract the `.zip.001` file to the same directory.
 
