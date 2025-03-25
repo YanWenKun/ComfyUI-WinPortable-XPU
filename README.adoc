@@ -63,9 +63,9 @@ or use the direct download links:
 
 ** **Arrow Lake-H (Ultra Series 2 Mobile Processors)** users:
 
-*** https://github.com/YanWenKun/ComfyUI-WinPortable-XPU/releases/download/r1-arl/ComfyUI_Windows_portable_arl.7z.001[ComfyUI_Windows_portable_arl.7z.001]
+*** https://github.com/YanWenKun/ComfyUI-WinPortable-XPU/releases/download/r2-arl/ComfyUI_Windows_portable_arl.7z.001[ComfyUI_Windows_portable_arl.7z.001]
 
-*** https://github.com/YanWenKun/ComfyUI-WinPortable-XPU/releases/download/r1-arl/models.zip.001[models.zip.001] (Model package, only needs to be downloaded once, no need to re-download for future updates)
+*** https://github.com/YanWenKun/ComfyUI-WinPortable-XPU/releases/download/r2-arl/models.zip.001[models.zip.001] (Model package, only needs to be downloaded once, no need to re-download for future updates)
 
 ** **All Other Models** users:
 
