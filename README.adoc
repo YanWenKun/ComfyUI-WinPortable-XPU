@@ -67,7 +67,7 @@ or use the direct download links:
 
 *** https://github.com/YanWenKun/ComfyUI-WinPortable-XPU/releases/download/r2-arl/models.zip.001[models.zip.001] (Model package, only needs to be downloaded once, no need to re-download for future updates)
 
-** **All Other Models** users:
+** **All Other Intel GPUs** users:
 
 *** https://github.com/YanWenKun/ComfyUI-WinPortable-XPU/releases/download/r2-xpu/ComfyUI_Windows_portable_xpu.7z.001[ComfyUI_Windows_portable_xpu.7z.001]
 
