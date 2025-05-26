@@ -1,4 +1,4 @@
-# Make sure use Numpy 1
+# Make sure to use Numpy 1
 numpy==1.26.4
 
 intel-extension-for-pytorch
