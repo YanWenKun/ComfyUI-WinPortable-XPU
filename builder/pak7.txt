@@ -5,7 +5,7 @@ blend-modes
 facexlib
 fvcore
 gguf
-git+https://github.com/cozy-comfyui/cozy-comfyui@main#egg=cozy-comfyui
+git+https://github.com/cozy-comfyui/cozy_comfyui.git
 gpytoolbox
 hydra-core
 iopath
