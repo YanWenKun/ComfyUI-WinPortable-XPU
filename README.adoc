@@ -27,7 +27,7 @@ https://github.com/YanWenKun/ComfyUI-Windows-Portable/tree/v8.1[ComfyUI-Windows-
 ** 185H, 165H, 155H, 135H, 125H, 165HL, 155HL, 135HL, 125HL
 
 For the full list, refer to
-https://pytorch-extension.intel.com/?platform=gpu&version=v2.6.10%2Bxpu&os=windows&package=pip[Intel Documentation].
+https://pytorch-extension.intel.com/?platform=gpu&version=v2.7.10%2Bxpu&os=windows&package=pip[Intel Documentation].
 
 
 ## Other Features
@@ -61,17 +61,11 @@ https://aka.ms/vs/17/release/vc_redist.x64.exe[Direct Download]
 https://github.com/YanWenKun/ComfyUI-WinPortable-XPU/releases[Releases Page],
 or use the direct download links:
 
-** **Arrow Lake-H (Ultra Series 2 Mobile Processors)** users:
+** https://github.com/YanWenKun/ComfyUI-WinPortable-XPU/releases/download/r3/ComfyUI_Windows_portable_xpu.7z.001[ComfyUI_Windows_portable_xpu.7z.001]
 
-*** https://github.com/YanWenKun/ComfyUI-WinPortable-XPU/releases/download/r2-arl/ComfyUI_Windows_portable_arl.7z.001[ComfyUI_Windows_portable_arl.7z.001]
+** https://github.com/YanWenKun/ComfyUI-WinPortable-XPU/releases/download/r3/ComfyUI_Windows_portable_xpu.7z.002[ComfyUI_Windows_portable_xpu.7z.002]
 
-*** https://github.com/YanWenKun/ComfyUI-WinPortable-XPU/releases/download/r2-arl/models.zip.001[models.zip.001] (Model package, only needs to be downloaded once, no need to re-download for future updates)
-
-** **All Other Intel GPUs** users:
-
-*** https://github.com/YanWenKun/ComfyUI-WinPortable-XPU/releases/download/r2-xpu/ComfyUI_Windows_portable_xpu.7z.001[ComfyUI_Windows_portable_xpu.7z.001]
-
-*** https://github.com/YanWenKun/ComfyUI-WinPortable-XPU/releases/download/r2-xpu/models.zip.001[models.zip.001] (Model package, only needs to be downloaded once, no need to re-download for future updates)
+** https://github.com/YanWenKun/ComfyUI-WinPortable-XPU/releases/download/r3/models.zip.001[models.zip.001] (Model package, only needs to be downloaded once, no need to re-download for future updates)
 
 . Extract the `.7z.001` file (recommended not to place it in a deep directory), and extract the `.zip.001` file to the same directory.
 
@@ -232,7 +226,7 @@ If the process goes smoothly, it avoids installing or upgrading Python packages,
 [cols=3]
 |===
 3+|**Workspace**
-|link:https://github.com/ltdrdata/ComfyUI-Manager[ComfyUI Manager]
+|link:https://github.com/Comfy-Org/ComfyUI-Manager[ComfyUI Manager]
 |link:https://github.com/crystian/ComfyUI-Crystools[Crystools]
 |link:https://github.com/pydn/ComfyUI-to-Python-Extension[ComfyUI-to-Python-Extension]
 3+|**General**

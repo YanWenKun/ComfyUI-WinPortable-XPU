@@ -27,7 +27,7 @@ https://github.com/YanWenKun/ComfyUI-Windows-Portable/tree/v8.1[ComfyUI-Windows-
 ** 185H, 165H, 155H, 135H, 125H, 165HL, 155HL, 135HL, 125HL
 
 完整列表参见
-https://pytorch-extension.intel.com/?platform=gpu&version=v2.6.10%2Bxpu&os=windows&package=pip[Intel 文档] 。
+https://pytorch-extension.intel.com/?platform=gpu&version=v2.7.10%2Bxpu&os=windows&package=pip[Intel 文档] 。
 
 
 ## 其他特点
@@ -60,17 +60,11 @@ https://aka.ms/vs/17/release/vc_redist.x64.exe[直接下载]
 https://github.com/YanWenKun/ComfyUI-WinPortable-XPU/releases[发布页面]
 下载整合包文件，或者直接下载链接：
 
-** **Arrow Lake-H（Ultra 2 笔记本处理器）**用户：
+** https://github.com/YanWenKun/ComfyUI-WinPortable-XPU/releases/download/r3/ComfyUI_Windows_portable_xpu.7z.001[ComfyUI_Windows_portable_xpu.7z.001]
 
-*** https://github.com/YanWenKun/ComfyUI-WinPortable-XPU/releases/download/r2-arl/ComfyUI_Windows_portable_arl.7z.001[ComfyUI_Windows_portable_arl.7z.001]
+** https://github.com/YanWenKun/ComfyUI-WinPortable-XPU/releases/download/r3/ComfyUI_Windows_portable_xpu.7z.002[ComfyUI_Windows_portable_xpu.7z.002]
 
-*** https://github.com/YanWenKun/ComfyUI-WinPortable-XPU/releases/download/r2-arl/models.zip.001[models.zip.001] （模型包，只需下载一次，以后升级无需重复下载）
-
-** **其他所有型号**用户：
-
-*** https://github.com/YanWenKun/ComfyUI-WinPortable-XPU/releases/download/r2-xpu/ComfyUI_Windows_portable_xpu.7z.001[ComfyUI_Windows_portable_xpu.7z.001]
-
-*** https://github.com/YanWenKun/ComfyUI-WinPortable-XPU/releases/download/r2-xpu/models.zip.001[models.zip.001] （模型包，只需下载一次，以后升级无需重复下载）
+** https://github.com/YanWenKun/ComfyUI-WinPortable-XPU/releases/download/r3/models.zip.001[models.zip.001] （模型包，只需下载一次，以后升级无需重复下载）
 
 . 打开 `.7z.001` 并解压（建议不要放在太深的目录），打开 `.zip.001` 并解压到同一个目录
 
@@ -231,7 +225,7 @@ ComfyUI 有五处常见的模型文件保存位置：
 .工作空间
 [cols=3]
 |===
-|link:https://github.com/ltdrdata/ComfyUI-Manager[ComfyUI Manager]
+|link:https://github.com/Comfy-Org/ComfyUI-Manager[ComfyUI Manager]
 |link:https://github.com/crystian/ComfyUI-Crystools[Crystools]
 |link:https://github.com/pydn/ComfyUI-to-Python-Extension[ComfyUI-to-Python-Extension]
 |

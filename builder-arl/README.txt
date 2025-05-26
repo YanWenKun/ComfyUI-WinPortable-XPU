@@ -1,3 +1,10 @@
+[DEPRECATED]
+As of PyTorch 2.7.0, Arrow Lake-H support is now included 
+in the main XPU package (PyTorch XPU + IPEX), eliminating 
+the need for a separate package.
+
+----
+
 This folder uses a special PyTorch and IPEX 
 for Intel Arrow Lake-H (Ultra Series 2 Mobile Processors).
 
