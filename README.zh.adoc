@@ -60,11 +60,11 @@ https://aka.ms/vs/17/release/vc_redist.x64.exe[直接下载]
 https://github.com/YanWenKun/ComfyUI-WinPortable-XPU/releases[发布页面]
 下载整合包文件，或者直接下载链接：
 
-** https://github.com/YanWenKun/ComfyUI-WinPortable-XPU/releases/download/r3/ComfyUI_Windows_portable_xpu.7z.001[ComfyUI_Windows_portable_xpu.7z.001]
+** https://github.com/YanWenKun/ComfyUI-WinPortable-XPU/releases/download/r4/ComfyUI_Windows_portable_xpu.7z.001[ComfyUI_Windows_portable_xpu.7z.001]
 
-** https://github.com/YanWenKun/ComfyUI-WinPortable-XPU/releases/download/r3/ComfyUI_Windows_portable_xpu.7z.002[ComfyUI_Windows_portable_xpu.7z.002]
+** https://github.com/YanWenKun/ComfyUI-WinPortable-XPU/releases/download/r4/ComfyUI_Windows_portable_xpu.7z.002[ComfyUI_Windows_portable_xpu.7z.002]
 
-** https://github.com/YanWenKun/ComfyUI-WinPortable-XPU/releases/download/r3/models.zip.001[models.zip.001] （模型包，只需下载一次，以后升级无需重复下载）
+** https://github.com/YanWenKun/ComfyUI-WinPortable-XPU/releases/download/r4/models.zip.001[models.zip.001] （模型包，只需下载一次，以后升级无需重复下载）
 
 . 打开 `.7z.001` 并解压（建议不要放在太深的目录），打开 `.zip.001` 并解压到同一个目录
 
@@ -228,6 +228,16 @@ ComfyUI 有五处常见的模型文件保存位置：
 |link:https://github.com/Comfy-Org/ComfyUI-Manager[ComfyUI Manager]
 |link:https://github.com/crystian/ComfyUI-Crystools[Crystools]
 |link:https://github.com/pydn/ComfyUI-to-Python-Extension[ComfyUI-to-Python-Extension]
+|
+|
+|===
+
+.性能
+[cols=3]
+|===
+|link:https://github.com/city96/ComfyUI-GGUF[GGUF]
+|link:https://github.com/welltop-cn/ComfyUI-TeaCache[TeaCache]
+|link:https://github.com/openvino-dev-samples/comfyui_openvino[OpenVINO]
 |
 |
 |===

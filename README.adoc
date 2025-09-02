@@ -61,11 +61,11 @@ https://aka.ms/vs/17/release/vc_redist.x64.exe[Direct Download]
 https://github.com/YanWenKun/ComfyUI-WinPortable-XPU/releases[Releases Page],
 or use the direct download links:
 
-** https://github.com/YanWenKun/ComfyUI-WinPortable-XPU/releases/download/r3/ComfyUI_Windows_portable_xpu.7z.001[ComfyUI_Windows_portable_xpu.7z.001]
+** https://github.com/YanWenKun/ComfyUI-WinPortable-XPU/releases/download/r4/ComfyUI_Windows_portable_xpu.7z.001[ComfyUI_Windows_portable_xpu.7z.001]
 
-** https://github.com/YanWenKun/ComfyUI-WinPortable-XPU/releases/download/r3/ComfyUI_Windows_portable_xpu.7z.002[ComfyUI_Windows_portable_xpu.7z.002]
+** https://github.com/YanWenKun/ComfyUI-WinPortable-XPU/releases/download/r4/ComfyUI_Windows_portable_xpu.7z.002[ComfyUI_Windows_portable_xpu.7z.002]
 
-** https://github.com/YanWenKun/ComfyUI-WinPortable-XPU/releases/download/r3/models.zip.001[models.zip.001] (Model package, only needs to be downloaded once, no need to re-download for future updates)
+** https://github.com/YanWenKun/ComfyUI-WinPortable-XPU/releases/download/r4/models.zip.001[models.zip.001] (Model package, only needs to be downloaded once, no need to re-download for future updates)
 
 . Extract the `.7z.001` file (recommended not to place it in a deep directory), and extract the `.zip.001` file to the same directory.
 
@@ -229,6 +229,10 @@ If the process goes smoothly, it avoids installing or upgrading Python packages,
 |link:https://github.com/Comfy-Org/ComfyUI-Manager[ComfyUI Manager]
 |link:https://github.com/crystian/ComfyUI-Crystools[Crystools]
 |link:https://github.com/pydn/ComfyUI-to-Python-Extension[ComfyUI-to-Python-Extension]
+3+|**Performance**
+|link:https://github.com/city96/ComfyUI-GGUF[GGUF]
+|link:https://github.com/welltop-cn/ComfyUI-TeaCache[TeaCache]
+|link:https://github.com/openvino-dev-samples/comfyui_openvino[OpenVINO]
 3+|**General**
 |link:https://github.com/akatz-ai/ComfyUI-AKatz-Nodes[AKatz Nodes]
 |link:https://github.com/Suzie1/ComfyUI_Comfyroll_CustomNodes.git[Comfyroll Studio]
@@ -272,7 +276,6 @@ If the process goes smoothly, it avoids installing or upgrading Python packages,
 |link:https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite[Video Helper Suite]
 |
 3+|**More**
-|link:https://github.com/city96/ComfyUI-GGUF[ComfyUI-GGUF]
 |link:https://github.com/kijai/ComfyUI-DepthAnythingV2[Depth Anything V2 by kijai]
 |link:https://github.com/akatz-ai/ComfyUI-DepthCrafter-Nodes[DepthCrafter by akatz]
 |link:https://github.com/cubiq/ComfyUI_FaceAnalysis[Face Analysis by cubiq]
