@@ -83,32 +83,7 @@ image::docs/screenshot-launcher.webp["Launcher Screenshot"]
 
 ## Known Issues
 
-Test results on Arc B580 (12G) are as follows:
-
-[%autowidth,cols=2]
-|===
-
-|SD 1.5
-|🆗 Fast
-
-|SDXL
-|🆗 Fast
-
-|Playground 2.5
-|🆗 Fast
-
-|Stable Cascade
-|🆗 Very fast
-
-|FLUX.1
-|❌ Crashes during the first step of loading the model, no error message, just exits
-
-|SD 3.5
-|❌ Crashes during the first step of loading the model, no error message, just exits
-
-|===
-
-Current known issues:
+. Not all models are compatible with Intel GPUs.
 
 . When VRAM is insufficient, the driver does not actively use system memory but crashes directly, and sometimes does not release VRAM after crashing.
 
@@ -122,7 +97,7 @@ Current known issues:
 
 ** Using "Disable Smart Memory Management" will increase model loading time. If you only use a single model after launching, you can disable this option to save time (but be cautious of VRAM overflow).
 
-. The driver performance on Windows differs from that on Linux (kernel module xe), mainly in VRAM usage, with little difference in inference speed. WSL2 has not been tested.
+. The driver performance on Windows differs from that on Linux (kernel module `xe`), mainly in VRAM usage, with little difference in inference speed. WSL2 has not been tested.
 
 ## Usage Tips
 
