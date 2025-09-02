@@ -301,7 +301,6 @@ ComfyUI 有五处常见的模型文件保存位置：
 .更多
 [cols=3]
 |===
-|link:https://github.com/city96/ComfyUI-GGUF[ComfyUI-GGUF]
 |link:https://github.com/kijai/ComfyUI-DepthAnythingV2[Depth Anything V2 by kijai]
 |link:https://github.com/akatz-ai/ComfyUI-DepthCrafter-Nodes[DepthCrafter by akatz]
 |link:https://github.com/cubiq/ComfyUI_FaceAnalysis[Face Analysis by cubiq]
