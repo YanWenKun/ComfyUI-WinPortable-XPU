@@ -42,6 +42,11 @@ mkdir models
 cd "$workdir"/ComfyUI_Windows_portable/ComfyUI/custom_nodes
 $gcs https://github.com/Comfy-Org/ComfyUI-Manager.git
 
+# Performance
+$gcs https://github.com/openvino-dev-samples/comfyui_openvino.git
+$gcs https://github.com/welltop-cn/ComfyUI-TeaCache.git
+$gcs https://github.com/city96/ComfyUI-GGUF.git
+
 # Workspace
 $gcs https://github.com/crystian/ComfyUI-Crystools.git
 $gcs https://github.com/pydn/ComfyUI-to-Python-Extension.git
@@ -90,7 +95,6 @@ $gcs https://github.com/melMass/comfy_mtb.git
 
 # More
 $gcs https://github.com/akatz-ai/ComfyUI-DepthCrafter-Nodes.git
-$gcs https://github.com/city96/ComfyUI-GGUF.git
 $gcs https://github.com/cubiq/ComfyUI_FaceAnalysis.git
 $gcs https://github.com/digitaljohn/comfyui-propost.git
 $gcs https://github.com/kijai/ComfyUI-DepthAnythingV2.git
