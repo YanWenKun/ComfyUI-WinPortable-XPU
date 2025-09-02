@@ -23,7 +23,7 @@ https://github.com/ltdrdata/ComfyUI-Impact-Pack/raw/refs/heads/Main/requirements
 https://github.com/ltdrdata/ComfyUI-Impact-Subpack/raw/refs/heads/main/requirements.txt
 https://github.com/ltdrdata/ComfyUI-Inspire-Pack/raw/refs/heads/main/requirements.txt
 https://github.com/melMass/comfy_mtb/raw/refs/heads/main/requirements.txt
-https://github.com/WASasquatch/was-node-suite-comfyui/raw/refs/heads/main/requirements.txt
+https://github.com/ltdrdata/was-node-suite-comfyui/raw/refs/heads/main/requirements.txt
 )
 
 for line in "${array[@]}";
@@ -37,7 +37,9 @@ sed -i 's/_/-/g' pak5.txt
 
 sort -ufo pak5.txt pak5.txt
 
-# Remove duplicate items, compare to pak4.txt
+# Remove duplicate items, compare to pak 4/6/7
 grep -Fixv -f pak4.txt pak5.txt > temp.txt && mv temp.txt pak5.txt
+grep -Fixv -f pak6.txt pak5.txt > temp.txt && mv temp.txt pak5.txt
+grep -Fixv -f pak7.txt pak5.txt > temp.txt && mv temp.txt pak5.txt
 
 echo "<pak5.txt> generated. Check before use."

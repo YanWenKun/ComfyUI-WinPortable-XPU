@@ -2,6 +2,7 @@
 addict
 aiohttp
 albumentations
+alembic
 av
 cachetools
 chardet
@@ -15,12 +16,14 @@ filelock
 GitPython
 imageio-ffmpeg
 importlib-metadata
+matrix-nio
 mss
 numba
 numexpr
 piexif
 psutil
 py-cpuinfo
+pydantic-settings
 pydantic
 PyGithub
 pynvml
@@ -37,6 +40,7 @@ sentencepiece
 simpleeval
 soundfile
 spandrel
+SQLAlchemy
 svglib
 tokenizers
 toml

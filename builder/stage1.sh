@@ -12,7 +12,7 @@ ls -lahF
 
 # Download Python Standalone
 curl -sSL \
-https://github.com/astral-sh/python-build-standalone/releases/download/20250521/cpython-3.12.10+20250521-x86_64-pc-windows-msvc-install_only.tar.gz \
+https://github.com/astral-sh/python-build-standalone/releases/download/20250828/cpython-3.12.11+20250828-x86_64-pc-windows-msvc-install_only.tar.gz \
     -o python.tar.gz
 tar -zxf python.tar.gz
 mv python python_standalone
@@ -32,9 +32,11 @@ $pip_exe install -r "$workdir"/pak8.txt
 # https://github.com/plemeri/transparent-background/blob/f54975ce489af549dcfc4dc0a2d39e8f69a204fd/setup.py#L45
 $pip_exe install --upgrade albucore albumentations
 
-# Install comfyui-frontend-package, version determined by ComfyUI.
-$pip_exe install -r https://github.com/comfyanonymous/ComfyUI/raw/refs/heads/master/requirements.txt
+# Install comfyui-frontend-package, version determined by ComfyUI release version.
+latest_tag=$(curl -s https://api.github.com/repos/comfyanonymous/ComfyUI/tags | jq -r '.[0].name')
+$pip_exe install -r "https://github.com/comfyanonymous/ComfyUI/raw/refs/tags/${latest_tag}/requirements.txt"
 
+$pip_exe install -r "$workdir"/pakX.txt
 $pip_exe install -r "$workdir"/pakY.txt
 $pip_exe install -r "$workdir"/pakZ.txt
 
@@ -56,7 +58,7 @@ mv "$workdir"/aria2/*/aria2c.exe  "$workdir"/python_standalone/Scripts/
 rm aria2.zip
 
 # Add FFmpeg binary
-curl -sSL https://github.com/GyanD/codexffmpeg/releases/download/7.1.1/ffmpeg-7.1.1-full_build.zip \
+curl -sSL https://github.com/GyanD/codexffmpeg/releases/download/8.0/ffmpeg-8.0-full_build.zip \
     -o ffmpeg.zip
 unzip -q ffmpeg.zip -d "$workdir"/ffmpeg
 mv "$workdir"/ffmpeg/*/bin/ffmpeg.exe  "$workdir"/python_standalone/Scripts/

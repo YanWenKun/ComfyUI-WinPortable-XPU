@@ -1,14 +1,13 @@
 accelerate
 diffusers
 ftfy
-huggingface-hub[hf-transfer]
+huggingface-hub[hf-transfer,cli,hf-xet]
 imageio[ffmpeg]
 joblib
 kornia
 matplotlib
 omegaconf
 onnx
-onnxruntime
 opencv-contrib-python-headless
 pandas
 pilgram

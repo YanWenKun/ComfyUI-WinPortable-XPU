@@ -1,5 +1,8 @@
 # Make sure to use Numpy 1
+# Consider to decouple in next release
 numpy==1.26.4
 
+# IPEX will be unneeded in next release
+# Most of its features are merged into PyTorch
 intel-extension-for-pytorch
 --extra-index-url https://pytorch-extension.intel.com/release-whl/stable/xpu/us/
