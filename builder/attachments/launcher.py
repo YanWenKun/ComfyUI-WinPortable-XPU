@@ -21,6 +21,7 @@ def save_config(args):
         "disable_smart_memory": args.disable_smart_memory,
         "lowvram": args.lowvram,
         "disable_ipex_optimize": args.disable_ipex_optimize,
+        "async_offload": args.async_offload,
         "extra_args": args.extra_args,
     }
     with open(CONFIG_FILE, "w") as f:
@@ -36,7 +37,6 @@ def load_config():
 @Gooey(program_name="ComfyUI Launcher for XPU", 
        language='english',
        tabbed_groups=True)  # Enable tabbed layout
-
 def main():
     # Load the last configuration
     saved_config = load_config()
@@ -96,6 +96,11 @@ def main():
                             action='store_true',
                             help='Disable Intel Extension for PyTorch Optimization when loading models, for debugging (--disable-ipex-optimize)',
                             default=saved_config.get("disable_ipex_optimize", False) if saved_config else False)
+    launch_tab.add_argument('--async_offload', 
+                            metavar='Async Weight Offload', 
+                            action='store_true',
+                            help='Use async weight offloading, small boost in speed (--async-offload)',
+                            default=saved_config.get("async_offload", False) if saved_config else False)
     launch_tab.add_argument('--extra_args', 
                             metavar='Additional Launch Arguments', 
                             help='Refer to ComfyUI’s cli_args.py, add extra launch parameters (e.g., " --cpu" for CPU-only mode), mind spaces',
@@ -145,6 +150,8 @@ def main():
         command.append('--lowvram')
     if args.disable_ipex_optimize:
         command.append('--disable-ipex-optimize')
+    if args.async_offload:
+        command.append('--async-offload')
 
     # Add user-defined extra parameters
     if args.extra_args:

@@ -21,6 +21,7 @@ def save_config(args):
         "disable_smart_memory": args.disable_smart_memory,
         "lowvram": args.lowvram,
         "disable_ipex_optimize": args.disable_ipex_optimize,
+        "async_offload": args.async_offload,
         "extra_args": args.extra_args,
     }
     with open(CONFIG_FILE, "w") as f:
@@ -131,6 +132,11 @@ def main():
                             action='store_true',
                             help='禁用 Intel Extension for PyTorch 优化， 便于排错 (--disable-ipex-optimize)',
                             default=saved_config.get("disable_ipex_optimize", False) if saved_config else False)
+    launch_tab.add_argument('--async_offload', 
+                            metavar='异步权重卸载', 
+                            action='store_true',
+                            help='使用异步权重卸载，略微加快速度 (--async-offload)',
+                            default=saved_config.get("async_offload", False) if saved_config else False)
     launch_tab.add_argument('--extra_args', 
                             metavar='额外启动参数', 
                             help='参数列表在 ComfyUI 的 cli_args.py， 注意添加空格 （例如 " --cpu" 启用仅 CPU 模式）',
@@ -184,6 +190,8 @@ def main():
         command.append('--lowvram')
     if args.disable_ipex_optimize:
         command.append('--disable-ipex-optimize')
+    if args.async_offload:
+        command.append('--async-offload')
 
     # 添加用户自定义的额外参数
     if args.extra_args:
