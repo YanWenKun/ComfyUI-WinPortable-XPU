@@ -83,21 +83,45 @@ image::docs/screenshot-launcher.webp["Launcher Screenshot"]
 
 ## Known Issues
 
-. Not all models are compatible with Intel GPUs.
+Test results on Arc B580 (12G) are as follows:
 
-. When VRAM is insufficient, the driver does not actively use system memory but crashes directly, and sometimes does not release VRAM after crashing.
+[%autowidth,cols=2]
+|===
 
-** If the program crashes during the sampling phase, try reducing the latent image size.
+|SD 1.5
+|🆗 Fast
 
-** If the program crashes during model loading, there is no good solution for now; try switching models.
+|SDXL
+|🆗 Fast
 
-** Closing GPU-accelerated programs (e.g., browsers) can free up some VRAM.
+|Playground 2.5
+|🆗 Fast
 
-. Switching model types (e.g., running an SDXL workflow after a Stable Cascade workflow) may cause the program to crash. Adding the `--disable-smart-memory` parameter by default alleviates this issue.
+|Stable Cascade
+|🆗 Very fast
 
-** Using "Disable Smart Memory Management" will increase model loading time. If you only use a single model after launching, you can disable this option to save time (but be cautious of VRAM overflow).
+|FLUX.1
+|❌ Generates noise (static) image 
 
-. The driver performance on Windows differs from that on Linux (kernel module `xe`), mainly in VRAM usage, with little difference in inference speed. WSL2 has not been tested.
+|SD 3.5
+|🆗 Good
+
+|===
+
+Current known issues:
+
+. Once VRAM overflows, the program crashes or freezes and needs to be restarted. Adding the `--disable-smart-memory` parameter by default alleviates this issue.
+
+** Using "Disable Smart Memory Management" will increase model loading time. If you only use a single model after launching, you can disable this option to save time.
+
+** Try to avoid using different major types of models in a single session (e.g., running an SD 3.5 workflow followed by an SDXL workflow) to reduce VRAM leaks.
+
+** Closing GPU-accelerated programs (e.g., browsers) can free up some VRAM. After closing the browser, the program continues to run, and you can check the generation progress in the log window.
+
+. In current version (PyTorch 2.8.0), the XPU performance on Windows is inferior than that on Linux.
+It's using more VRAM and is compatible with less models, although the inference speed is similar. WSL2 has not been tested.
+
+** https://github.com/YanWenKun/ComfyUI-Docker/tree/main/xpu[Docker image for XPU]
 
 ## Usage Tips
 
