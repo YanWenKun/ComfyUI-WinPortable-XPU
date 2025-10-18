@@ -1,3 +1,0 @@
-# Make sure to use Numpy 1
-# Consider to decouple in next release
-numpy==1.26.4

@@ -38,7 +38,6 @@ $pip_exe install -r "https://github.com/comfyanonymous/ComfyUI/raw/refs/tags/${l
 
 $pip_exe install -r "$workdir"/pakX.txt
 $pip_exe install -r "$workdir"/pakY.txt
-$pip_exe install -r "$workdir"/pakZ.txt
 
 $pip_exe list
 
