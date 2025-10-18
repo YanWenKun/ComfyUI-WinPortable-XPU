@@ -22,7 +22,7 @@ mkdir -p "${TORCH_HOME}"
 mv  "$workdir"/python_standalone  "$workdir"/ComfyUI_Windows_portable/python_standalone
 
 # Add MinGit (Portable Git)
-curl -sSL https://github.com/git-for-windows/git/releases/download/v2.51.0.windows.1/MinGit-2.51.0-64-bit.zip \
+curl -sSL https://github.com/git-for-windows/git/releases/download/v2.51.1.windows.1/MinGit-2.51.1-64-bit.zip \
     -o MinGit.zip
 unzip -q MinGit.zip -d "$workdir"/ComfyUI_Windows_portable/MinGit
 rm MinGit.zip
@@ -60,12 +60,12 @@ $gcs https://github.com/cubiq/ComfyUI_essentials.git
 $gcs https://github.com/Derfuu/Derfuu_ComfyUI_ModdedNodes.git
 $gcs https://github.com/jags111/efficiency-nodes-comfyui.git
 $gcs https://github.com/kijai/ComfyUI-KJNodes.git
+$gcs https://github.com/ltdrdata/was-node-suite-comfyui.git
 $gcs https://github.com/mirabarukaso/ComfyUI_Mira.git
 $gcs https://github.com/pythongosssss/ComfyUI-Custom-Scripts.git
 $gcs https://github.com/rgthree/rgthree-comfy.git
 $gcs https://github.com/shiimizu/ComfyUI_smZNodes.git
 $gcs https://github.com/Suzie1/ComfyUI_Comfyroll_CustomNodes.git
-$gcs https://github.com/WASasquatch/was-node-suite-comfyui.git
 $gcs https://github.com/yolain/ComfyUI-Easy-Use.git
 
 # Control
