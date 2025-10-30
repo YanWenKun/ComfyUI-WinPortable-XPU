@@ -20,4 +20,4 @@ scikit-learn
 scipy
 timm
 torchmetrics
-transformers
+transformers[torch]
