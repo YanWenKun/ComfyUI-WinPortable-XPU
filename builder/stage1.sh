@@ -38,6 +38,9 @@ $pip_exe install -r "https://github.com/comfyanonymous/ComfyUI/raw/refs/tags/${l
 $pip_exe install -r "$workdir"/pakX.txt
 $pip_exe install -r "$workdir"/pakY.txt
 
+# tempfix: compatibility for ReActor
+$pip_exe install numpy==1.26.4
+
 $pip_exe list
 
 cd "$workdir"
