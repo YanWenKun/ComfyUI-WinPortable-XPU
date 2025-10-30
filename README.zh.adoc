@@ -100,9 +100,12 @@ image::docs/screenshot-launcher.zh.webp["启动器截图"]
 |🆗 特别快
 
 |FLUX.1
-|❌ 生成噪声图（雪花图）
+|❌ 无法加载
 
 |SD 3.5
+|🆗 正常
+
+|Lumina 2
 |🆗 正常
 
 |===
@@ -121,7 +124,7 @@ image::docs/screenshot-launcher.zh.webp["启动器截图"]
 
 ** 关闭使用 GPU 加速的程序（比如浏览器）可释放一部分显存。关闭浏览器后程序仍然在运行，可在日志窗口查看生成进度。
 
-. 当前版本（PyTorch 2.8.0）下，XPU 在 Windows 的表现不如 Linux。
+. 当前版本（PyTorch 2.9.0）下，XPU 在 Windows 的表现不如 Linux。
 在 Windows 上显存占用更高，兼容的模型更少，不过推理速度相近。WSL2 未测试。
 
 ** https://github.com/YanWenKun/ComfyUI-Docker/tree/main/xpu-cn[用于 XPU 的 ComfyUI Docker 镜像]

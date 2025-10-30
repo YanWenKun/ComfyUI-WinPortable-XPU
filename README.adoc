@@ -101,9 +101,12 @@ Test results on Arc B580 (12G) are as follows:
 |🆗 Very fast
 
 |FLUX.1
-|❌ Generates noise (static) image 
+|❌ Fail to load
 
 |SD 3.5
+|🆗 Good
+
+|Lumina 2
 |🆗 Good
 
 |===
@@ -122,7 +125,7 @@ Current known issues:
 
 ** Closing GPU-accelerated programs (e.g., browsers) can free up some VRAM. After closing the browser, the program continues to run, and you can check the generation progress in the log window.
 
-. In current version (PyTorch 2.8.0), the XPU performance on Windows is inferior than that on Linux.
+. In current version (PyTorch 2.9.0), the XPU performance on Windows is inferior than that on Linux.
 It's using more VRAM and is compatible with less models, although the inference speed is similar. WSL2 has not been tested.
 
 ** https://github.com/YanWenKun/ComfyUI-Docker/tree/main/xpu[Docker image for XPU]
