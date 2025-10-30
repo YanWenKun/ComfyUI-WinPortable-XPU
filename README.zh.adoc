@@ -26,8 +26,8 @@ https://github.com/YanWenKun/ComfyUI-Windows-Portable/tree/v8.1[ComfyUI-Windows-
 * Meteor Lake-H
 ** 185H, 165H, 155H, 135H, 125H, 165HL, 155HL, 135HL, 125HL
 
-完整列表参见
-https://pytorch-extension.intel.com/?platform=gpu&version=v2.7.10%2Bxpu&os=windows&package=pip[Intel 文档] 。
+更多兼容性信息参考
+https://docs.pytorch.org/docs/stable/notes/get_start_xpu.html[PyTorch 文档] 。
 
 
 ## 其他特点
@@ -60,11 +60,11 @@ https://aka.ms/vs/17/release/vc_redist.x64.exe[直接下载]
 https://github.com/YanWenKun/ComfyUI-WinPortable-XPU/releases[发布页面]
 下载整合包文件，或者直接下载链接：
 
-** https://github.com/YanWenKun/ComfyUI-WinPortable-XPU/releases/download/r4/ComfyUI_Windows_portable_xpu.7z.001[ComfyUI_Windows_portable_xpu.7z.001]
+** https://github.com/YanWenKun/ComfyUI-WinPortable-XPU/releases/download/r5/ComfyUI_Windows_portable_xpu.7z.001[ComfyUI_Windows_portable_xpu.7z.001]
 
-** https://github.com/YanWenKun/ComfyUI-WinPortable-XPU/releases/download/r4/ComfyUI_Windows_portable_xpu.7z.002[ComfyUI_Windows_portable_xpu.7z.002]
+** https://github.com/YanWenKun/ComfyUI-WinPortable-XPU/releases/download/r5/ComfyUI_Windows_portable_xpu.7z.002[ComfyUI_Windows_portable_xpu.7z.002]
 
-** https://github.com/YanWenKun/ComfyUI-WinPortable-XPU/releases/download/r4/models.zip.001[models.zip.001] （模型包，只需下载一次，以后升级无需重复下载）
+** https://github.com/YanWenKun/ComfyUI-WinPortable-XPU/releases/download/r5/models.zip.001[models.zip.001] （模型包，只需下载一次，以后升级无需重复下载）
 
 . 打开 `.7z.001` 并解压（建议不要放在太深的目录），打开 `.zip.001` 并解压到同一个目录
 
@@ -108,6 +108,10 @@ image::docs/screenshot-launcher.zh.webp["启动器截图"]
 |===
 
 目前已知问题：
+
+. https://github.com/Gourieff/ComfyUI-ReActor[ReActor] 节点不会正常加载，这是有意取舍，它依赖 NumPy1，与 OpenCV（依赖 NumPy2）冲突。
+
+** 如需反向取舍，在 ComfyUI-Manager 中找到 ReActor 并点击“Try Fix”，它会用 NumPy1 覆盖 NumPy2。OpenCV 在 NumPy1 下也能勉强工作，但仅限加载不报错，行为未知。
 
 . 一旦显存溢出，程序即崩溃或假死，需要重新启动。默认添加参数 `--disable-smart-memory` 后有所缓解。
 
