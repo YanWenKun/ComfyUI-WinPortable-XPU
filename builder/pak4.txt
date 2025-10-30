@@ -20,4 +20,5 @@ scikit-learn
 scipy
 timm
 torchmetrics
-transformers[torch]
+# tempfix: remove after version chaos resolved
+# transformers
