@@ -26,7 +26,6 @@ py-cpuinfo
 pydantic-settings
 pydantic
 PyGithub
-pynvml
 python-dateutil
 pyyaml
 qrcode[pil]
@@ -38,10 +37,8 @@ safetensors
 segment-anything
 sentencepiece
 simpleeval
-soundfile
 spandrel
 SQLAlchemy
-svglib
 tokenizers
 toml
 torchsde
