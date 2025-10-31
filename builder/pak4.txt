@@ -1,14 +1,17 @@
 accelerate
 diffusers
 ftfy
-huggingface-hub[hf-transfer,cli,hf-xet]
+huggingface-hub
 imageio[ffmpeg]
 joblib
 kornia
 matplotlib
 omegaconf
 onnx
+opencv-contrib-python
 opencv-contrib-python-headless
+opencv-python
+opencv-python-headless
 pandas
 pilgram
 pillow
@@ -20,5 +23,4 @@ scikit-learn
 scipy
 timm
 torchmetrics
-# tempfix: remove after version chaos resolved
-# transformers
+transformers
