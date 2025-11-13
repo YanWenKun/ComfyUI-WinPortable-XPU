@@ -38,8 +38,6 @@ https://docs.pytorch.org/docs/stable/notes/get_start_xpu.html[PyTorch Documentat
 
 ** Dependencies (200+ compatible Python packages) are pre-configured, including those that require compilation like `insightface` and `dlib`.
 ** Pre-downloaded some model files, including those for
-https://github.com/Gourieff/comfyui-reactor-node[ReActor Node]
-and
 https://github.com/ltdrdata/ComfyUI-Impact-Pack[Impact Pack],
 to avoid download delays during the first launch (which may cause freezing for users with a poor Internet connection).
 
@@ -113,10 +111,6 @@ Test results on Arc B580 (12G) are as follows:
 
 Current known issues:
 
-. https://github.com/Gourieff/ComfyUI-ReActor[ReActor] will fail to load. This is intentional because it requires NumPy1, which conflicts with OpenCV (requires NumPy2).
-
-** You can simply fix this by clicking "Try Fix" in ComfyUI-Manager, and it will override NumPy2 with NumPy1. OpenCV can work on NumPy1 but with some limitations.
-
 . Once VRAM overflows, the program crashes or freezes and needs to be restarted. Adding the `--disable-smart-memory` parameter by default alleviates this issue.
 
 ** Using "Disable Smart Memory Management" will increase model loading time. If you only use a single model after launching, you can disable this option to save time.
@@ -182,7 +176,6 @@ comfyui:
     mmdets: mmdets
     onnx: onnx
     photomaker: photomaker
-    reactor: reactor
     rembg: rembg
     sams: sams
     style_models: style_models
@@ -267,7 +260,6 @@ If the process goes smoothly, it avoids installing or upgrading Python packages,
 |link:https://github.com/chflame163/ComfyUI_LayerStyle[Layer Style]
 |link:https://github.com/huchenlei/ComfyUI-layerdiffuse[LayerDiffuse]
 |link:https://github.com/florestefano1975/comfyui-portrait-master[Portrait Master]
-|link:https://github.com/Gourieff/ComfyUI-ReActor[ReActor Node]
 |link:https://github.com/mcmonkeyprojects/sd-dynamic-thresholding[SD Dynamic Thresholding]
 |link:https://github.com/twri/sdxl_prompt_styler[SDXL Prompt Styler]
 |
