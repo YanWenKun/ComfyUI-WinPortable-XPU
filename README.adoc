@@ -59,11 +59,11 @@ https://aka.ms/vs/17/release/vc_redist.x64.exe[Direct Download]
 https://github.com/YanWenKun/ComfyUI-WinPortable-XPU/releases[Releases Page],
 or use the direct download links:
 
-** https://github.com/YanWenKun/ComfyUI-WinPortable-XPU/releases/download/r5/ComfyUI_Windows_portable_xpu.7z.001[ComfyUI_Windows_portable_xpu.7z.001]
+** https://github.com/YanWenKun/ComfyUI-WinPortable-XPU/releases/latest/download/ComfyUI_Windows_portable_xpu.7z.001[ComfyUI_Windows_portable_xpu.7z.001]
 
-** https://github.com/YanWenKun/ComfyUI-WinPortable-XPU/releases/download/r5/ComfyUI_Windows_portable_xpu.7z.002[ComfyUI_Windows_portable_xpu.7z.002]
+** https://github.com/YanWenKun/ComfyUI-WinPortable-XPU/releases/latest/download/ComfyUI_Windows_portable_xpu.7z.002[ComfyUI_Windows_portable_xpu.7z.002]
 
-** https://github.com/YanWenKun/ComfyUI-WinPortable-XPU/releases/download/r5/models.zip.001[models.zip.001] (Model package, only needs to be downloaded once, no need to re-download for future updates)
+** https://github.com/YanWenKun/ComfyUI-WinPortable-XPU/releases/latest/download/models.zip.001[models.zip.001] (Model package, only needs to be downloaded once, no need to re-download for future updates)
 
 . Extract the `.7z.001` file (recommended not to place it in a deep directory), and extract the `.zip.001` file to the same directory.
 
