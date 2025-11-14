@@ -262,6 +262,7 @@ ComfyUI 有五处常见的模型文件保存位置：
 |link:https://github.com/mcmonkeyprojects/sd-dynamic-thresholding[SD Dynamic Thresholding]
 |link:https://github.com/twri/sdxl_prompt_styler[SDXL Prompt Styler]
 |
+|
 3+|**视频**
 |link:https://github.com/Kosinkadink/ComfyUI-AnimateDiff-Evolved[AnimateDiff Evolved]
 |link:https://github.com/FizzleDorf/ComfyUI_FizzNodes[FizzNodes]
