@@ -14,13 +14,16 @@ mkdir -p m_folder/ComfyUI_Windows_portable/ComfyUI
 mv "ComfyUI_Windows_portable/ComfyUI/models"  "m_folder/ComfyUI_Windows_portable/ComfyUI/models"
 git -C "ComfyUI_Windows_portable/ComfyUI" checkout "models"
 
-"C:\Program Files\7-Zip\7z.exe" a -t7z -m0=lzma2 -mx=7 -mfb=64 -md=128m -ms=on -mf=BCJ2 -v2140000000b ComfyUI_Windows_portable_xpu.7z ComfyUI_Windows_portable
+# Randomize volume size to avoid CDN caching issues (mismatching old and new files since size is same)
+# Original size argument is: -v2140000000b
+_SIZE_PREFIX=214000
+_RAND_SUFFIX=$(printf "%04d" $((RANDOM % 10000)))
+VOL_SIZE="-v${_SIZE_PREFIX}${_RAND_SUFFIX}b"
 
-# In case you need faster compression, comment the line above, and uncomment the line below. 
-# "C:\Program Files\7-Zip\7z.exe" a -tzip -v2140000000b ComfyUI_Windows_portable_xpu.zip ComfyUI_Windows_portable
+"C:\Program Files\7-Zip\7z.exe" a -t7z -m0=lzma2 -mx=7 -mfb=64 -md=128m -ms=on -mf=BCJ2 "$VOL_SIZE" ComfyUI_Windows_portable_xpu.7z ComfyUI_Windows_portable
 
 cd m_folder
-"C:\Program Files\7-Zip\7z.exe" a -tzip -v2140000000b models.zip ComfyUI_Windows_portable
+"C:\Program Files\7-Zip\7z.exe" a -tzip "$VOL_SIZE" models.zip ComfyUI_Windows_portable
 mv ./*.zip* ../
 cd ..
 
