@@ -1,0 +1,5 @@
+# Install the actual PyTorch we would use
+--index-url https://download.pytorch.org/whl/xpu
+torch==2.10.0
+torchvision
+torchaudio

@@ -35,6 +35,7 @@ $pip_exe install -r "$workdir"/pak7.txt
 latest_tag=$(curl -sL https://api.github.com/repos/comfyanonymous/ComfyUI/tags | jq -r '.[0].name')
 $pip_exe install -r "https://github.com/comfyanonymous/ComfyUI/raw/refs/tags/${latest_tag}/requirements.txt"
 
+$pip_exe install -r "$workdir"/pakA.txt
 $pip_exe install -r "$workdir"/pakP.txt
 $pip_exe install -r "$workdir"/pakQ.txt
 
