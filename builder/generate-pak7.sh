@@ -28,7 +28,7 @@ https://github.com/city96/ComfyUI-GGUF/raw/refs/heads/main/requirements.txt
 )
 
 for line in "${array[@]}";
-    do curl -w "\n" -sSL "${line}" >> pak7.txt
+    do curl -Lw "\n" -sSL "${line}" >> pak7.txt
 done
 
 sed -i '/^#/d' pak7.txt
