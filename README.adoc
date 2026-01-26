@@ -6,7 +6,7 @@ English | *link:README.zh.adoc[中文说明]*
 image::docs/screenshot.webp["Screenshot"]
 
 Similar to the official ComfyUI 
-https://github.com/comfyanonymous/ComfyUI/releases[Standalone Portable]
+https://github.com/Comfy-Org/ComfyUI/releases[Standalone Portable]
 package, but built for Intel GPUs.
 
 This project is derived from

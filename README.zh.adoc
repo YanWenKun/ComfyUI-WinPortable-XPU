@@ -6,7 +6,7 @@ image::docs/screenshot.webp["界面截图"]
 中文 | *link:README.adoc[English]*
 
 类似 ComfyUI 官方的
-https://github.com/comfyanonymous/ComfyUI/releases[Standalone Portable]
+https://github.com/Comfy-Org/ComfyUI/releases[Standalone Portable]
 整合包，适配 Intel GPU。
 
 本项目修改自
