@@ -131,6 +131,8 @@ def main():
     os.environ['PYTHONPYCACHEPREFIX'] = os.path.join(os.getcwd(), 'pycache') # Duplicate, but keeping this line for code readability.
 
     # Configure PATH environment variable
+    xpu_dll_path = os.path.join(os.getcwd(), 'python_standalone', 'Library', 'bin')
+    os.environ['PATH'] = xpu_dll_path + os.pathsep + os.environ['PATH']
     os.environ['PATH'] += os.pathsep + os.path.join(os.getcwd(), 'MinGit', 'cmd')
     os.environ['PATH'] += os.pathsep + os.path.join(os.getcwd(), 'python_standalone', 'Scripts')
 
