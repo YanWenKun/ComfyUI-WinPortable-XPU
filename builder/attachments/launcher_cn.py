@@ -167,6 +167,7 @@ def main():
     os.environ['PYTHONPYCACHEPREFIX'] = os.path.join(os.getcwd(), 'pycache') # 功能重复，但为方便理解代码，保留该行
 
     # 配置 PATH 环境变量
+    os.environ['PATH'] += os.pathsep + os.path.join(os.getcwd(), 'python_standalone', 'Library', 'bin')
     os.environ['PATH'] += os.pathsep + os.path.join(os.getcwd(), 'MinGit', 'cmd')
     os.environ['PATH'] += os.pathsep + os.path.join(os.getcwd(), 'python_standalone', 'Scripts')
 
