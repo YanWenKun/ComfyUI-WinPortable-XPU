@@ -15,16 +15,26 @@ https://github.com/YanWenKun/ComfyUI-Windows-Portable/tree/v8.1[ComfyUI-Windows-
 
 ## Supported Intel GPUs (CPUs)
 
-* Arc B
-** B580, B570, and subsequent Battlemage series GPUs
-* Arc A
-** A770, A750, A580, A770M, A730M, A550M, Flex 170
-* Arrow Lake-H
-** 285H, 265H, 255H, 235H, 225H
-* Lunar Lake-V
-** 288V, 268V, 266V, 258V, 256V, 238V, 236V, 228V, 226V
-* Meteor Lake-H
-** 185H, 165H, 155H, 135H, 125H, 165HL, 155HL, 135HL, 125HL
+[cols="1,3"]
+|===
+| Arc Battlemage
+| B580, B570, B60, B50
+
+| Arc Alchemist
+| A770, A750, A580, A770M, A730M, A550M, Flex 170
+
+| Panther Lake
+| 388H, 386H, 368H, 366H, 358H, 356H, 338H, 336H, 365, 355, 335, 332, 325, 322
+
+| Lunar Lake
+| 288V, 268V, 266V, 258V, 256V, 238V, 236V, 228V, 226V
+
+| Arrow Lake-H
+| 285H, 265H, 255H, 235H, 225H
+
+| Meteor Lake-H
+| 185H, 165H, 155H, 135H, 125H, 165HL, 155HL, 135HL, 125HL
+|===
 
 For more information, refer to
 https://docs.pytorch.org/docs/stable/notes/get_start_xpu.html[PyTorch Documentation].
@@ -96,7 +106,7 @@ Test results on Arc B580 (12G) are as follows:
 |🆗 Fast
 
 |Stable Cascade
-|🆗 Very fast
+|🆗 Fast
 
 |FLUX.1
 |❌ Fail to load
@@ -105,6 +115,15 @@ Test results on Arc B580 (12G) are as follows:
 |🆗 Good
 
 |Lumina 2
+|🆗 Good
+
+|FLUX.2 [Klein] 9B
+|🆗 Good
+
+|Z-Image Turbo
+|🆗 Good
+
+|Qwen Image 2512
 |🆗 Good
 
 |===
@@ -119,7 +138,7 @@ Current known issues:
 
 ** Closing GPU-accelerated programs (e.g., browsers) can free up some VRAM. After closing the browser, the program continues to run, and you can check the generation progress in the log window.
 
-. In current version (PyTorch 2.9.0), the XPU performance on Windows is inferior than that on Linux.
+. In current version (PyTorch 2.10.0), the XPU performance on Windows is inferior than that on Linux.
 It's using more VRAM and is compatible with less models, although the inference speed is similar. WSL2 has not been tested.
 
 ** https://github.com/YanWenKun/ComfyUI-Docker/tree/main/xpu[Docker image for XPU]
