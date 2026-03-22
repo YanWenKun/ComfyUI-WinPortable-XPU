@@ -1,4 +1,4 @@
---index-url https://download.pytorch.org/whl/test/xpu
-torch==2.11.0
+--index-url https://download.pytorch.org/whl/nightly/xpu
+torch
 torchvision
 torchaudio
