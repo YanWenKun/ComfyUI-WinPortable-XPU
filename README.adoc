@@ -117,18 +117,23 @@ Test results on Arc B580 (12G) are as follows:
 |Lumina 2
 |🆗 Good
 
+|FLUX.1 Krea
+|🆗 Good
+
 |FLUX.2 [Klein] 9B
 |🆗 Good
 
 |Z-Image Turbo
-|🆗 Good
+|🆗 Slow on first run. Image oversize may cause freeze.
 
 |Qwen Image 2512
-|🆗 Good
+|❌ Fail to load
 
 |===
 
 Current known issues:
+
+. Compatibility and performance regression. Using the current version of Intel GPU drivers (101.8626) with PyTorch (2.11.0 RC) results in worse text-to-image performance compared to the previous version. Consider using an older version or use the latest development version (PyTorch 2.12 nightly).
 
 . Once VRAM overflows, the program crashes or freezes and needs to be restarted. Adding the `--disable-smart-memory` parameter by default alleviates this issue.
 
@@ -138,8 +143,9 @@ Current known issues:
 
 ** Closing GPU-accelerated programs (e.g., browsers) can free up some VRAM. After closing the browser, the program continues to run, and you can check the generation progress in the log window.
 
-. In current version (PyTorch 2.10.0), the XPU performance on Windows is inferior than that on Linux.
-It's using more VRAM and is compatible with less models, although the inference speed is similar. WSL2 has not been tested.
+. For ComfyUI text-to-image generation specifically, XPU performance on Windows is comprehensively inferior to Linux, and this has not improved significantly over several versions.
+Conversely, on Linux, each version shows visible improvements, and the performance gap continues to widen.
+If you plan to use ComfyUI heavily on Intel GPUs, consider using a Linux system (Fedora is recommended first, followed by the latest Ubuntu).
 
 ** https://github.com/YanWenKun/ComfyUI-Docker/tree/main/xpu[Docker image for XPU]
 

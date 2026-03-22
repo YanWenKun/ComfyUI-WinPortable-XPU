@@ -116,18 +116,23 @@ image::docs/screenshot-launcher.zh.webp["启动器截图"]
 |Lumina 2
 |🆗 正常
 
+|FLUX.1 Krea
+|🆗 正常
+
 |FLUX.2 [Klein] 9B
 |🆗 正常
 
 |Z-Image Turbo
-|🆗 正常
+|🆗 首次运行缓慢；图像尺寸过大易造成假死
 
 |Qwen Image 2512
-|🆗 正常
+|❌ 无法加载
 
 |===
 
 目前已知问题：
+
+. 兼容性与性能倒退。使用 PyTorch 2.11.0 RC 与英特尔显卡驱动 101.8626 ，文生图表现不如上一版。可以考虑使用旧版，或直接使用最新的开发版（PyTorch 2.12 nightly）。
 
 . 一旦显存溢出，程序即崩溃或假死，需要重新启动。默认添加参数 `--disable-smart-memory` 后有所缓解。
 
@@ -137,8 +142,9 @@ image::docs/screenshot-launcher.zh.webp["启动器截图"]
 
 ** 关闭使用 GPU 加速的程序（比如浏览器）可释放一部分显存。关闭浏览器后程序仍然在运行，可在日志窗口查看生成进度。
 
-. 当前版本（PyTorch 2.10.0）下，XPU 在 Windows 的表现不如 Linux。
-在 Windows 上显存占用更高，兼容的模型更少，不过推理速度相近。WSL2 未测试。
+. 仅就 ComfyUI 文生图而言，XPU 在 Windows 下的性能表现全面不如 Linux，且历经数个版本仍未有明显改善。
+相反， 在 Linux 下每个版本都有可见提升，差距越拉越大。
+如打算在 Intel GPU 上重度使用 ComfyUI，建议考虑使用 Linux 系统（优先推荐 Fedora，其次推荐最新版 Ubuntu）。
 
 ** https://github.com/YanWenKun/ComfyUI-Docker/tree/main/xpu-cn[用于 XPU 的 ComfyUI Docker 镜像]
 
