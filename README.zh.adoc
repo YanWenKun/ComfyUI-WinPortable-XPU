@@ -72,9 +72,9 @@ https://github.com/YanWenKun/ComfyUI-WinPortable-XPU/releases[发布页面]
 
 ** https://github.com/YanWenKun/ComfyUI-WinPortable-XPU/releases/latest/download/ComfyUI_Windows_portable_xpu.7z.002[ComfyUI_Windows_portable_xpu.7z.002]
 
-** https://github.com/YanWenKun/ComfyUI-WinPortable-XPU/releases/latest/download/models.zip.001[models.zip.001] （模型包，只需下载一次，以后升级无需重复下载）
+** https://github.com/YanWenKun/ComfyUI-WinPortable-XPU/releases/latest/download/models.zip[models.zip] （模型包，只需下载一次，以后升级无需重复下载）
 
-. 打开 `.7z.001` 并解压（建议不要放在太深的目录），打开 `.zip.001` 并解压到同一个目录
+. 打开 `.7z.001` 并解压（建议不要放在太深的目录），打开 `.zip` 并解压到同一个目录
 
 . 将 SD 模型放到 `ComfyUI\models\checkpoints` 下
 
