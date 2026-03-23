@@ -23,13 +23,18 @@ $pip_exe install --upgrade pip wheel setuptools
 $pip_exe install -r "$workdir"/pak2.txt
 $pip_exe install -r "$workdir"/pak3.txt
 
-# tempfix: remove after version chaos resolved
+# Temp-fix for version chaos of Transformers
 $pip_exe install transformers
 
 $pip_exe install -r "$workdir"/pak4.txt
 $pip_exe install -r "$workdir"/pak5.txt
 $pip_exe install -r "$workdir"/pak6.txt
 $pip_exe install -r "$workdir"/pak7.txt
+
+# Temp-fix for compel
+# compel is used by smZNodes
+$pip_exe install notebook pyparsing
+$pip_exe install --no-deps compel
 
 # Install comfyui-frontend-package, version determined by ComfyUI release version.
 latest_tag=$(curl -sL https://api.github.com/repos/Comfy-Org/ComfyUI/tags | jq -r '.[0].name')
