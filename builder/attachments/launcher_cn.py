@@ -36,7 +36,7 @@ def load_config():
 
 def create_channels_list():
     """让 ComfyUI-Manager 从国内镜像检查更新列表"""
-    channels_list_path = os.path.join("ComfyUI", "user", "default", "ComfyUI-Manager", "channels.list")
+    channels_list_path = os.path.join("ComfyUI", "user", "__manager", "channels.list")
     channels_list_content = """default::https://gh-proxy.org/https://github.com/Comfy-Org/ComfyUI-Manager/raw/refs/heads/main
 recent::https://gh-proxy.org/https://github.com/Comfy-Org/ComfyUI-Manager/raw/refs/heads/main/node_db/new
 legacy::https://gh-proxy.org/https://github.com/Comfy-Org/ComfyUI-Manager/raw/refs/heads/main/node_db/legacy
@@ -56,7 +56,7 @@ tutorial::https://gh-proxy.org/https://github.com/Comfy-Org/ComfyUI-Manager/raw/
 
 def create_config_ini():
     """让 ComfyUI-Manager 从国内镜像检查更新列表"""
-    config_ini_path = os.path.join("ComfyUI", "user", "default", "ComfyUI-Manager", "config.ini")
+    config_ini_path = os.path.join("ComfyUI", "user", "__manager", "config.ini")
     config_ini_content = """[default]
 channel_url = https://gh-proxy.org/https://github.com/Comfy-Org/ComfyUI-Manager/raw/refs/heads/main
 """
