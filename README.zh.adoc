@@ -254,8 +254,8 @@ ComfyUI 有五处常见的模型文件保存位置：
 |link:https://github.com/pydn/ComfyUI-to-Python-Extension[ComfyUI-to-Python-Extension]
 3+|**性能**
 |link:https://github.com/city96/ComfyUI-GGUF[GGUF]
-|link:https://github.com/welltop-cn/ComfyUI-TeaCache[TeaCache]
 |link:https://github.com/openvino-dev-samples/comfyui_openvino[OpenVINO]
+|
 3+|**综合**
 |link:https://github.com/akatz-ai/ComfyUI-AKatz-Nodes[AKatz Nodes]
 |link:https://github.com/Suzie1/ComfyUI_Comfyroll_CustomNodes.git[Comfyroll Studio]
@@ -268,10 +268,10 @@ ComfyUI 有五处常见的模型文件保存位置：
 |link:https://github.com/bash-j/mikey_nodes[Mikey Nodes]
 |link:https://github.com/mirabarukaso/ComfyUI_Mira[Mira Nodes]
 |link:https://github.com/rgthree/rgthree-comfy[rgthree Nodes]
-|link:https://github.com/shiimizu/ComfyUI_smZNodes[smZ(shiimizu) Nodes]
 |link:https://github.com/chrisgoringe/cg-use-everywhere[Use Everywhere]
 |link:https://github.com/ltdrdata/was-node-suite-comfyui[WAS Node Suite]
 |link:https://github.com/yolain/ComfyUI-Easy-Use[ComfyUI-Easy-Use]
+|
 3+|**控制**
 |link:https://github.com/Kosinkadink/ComfyUI-Advanced-ControlNet[Advanced ControlNet]
 |link:https://github.com/Fannovel16/comfyui_controlnet_aux[ControlNet Auxiliary Preprocessors]
