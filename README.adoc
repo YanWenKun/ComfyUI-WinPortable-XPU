@@ -133,7 +133,10 @@ Test results on Arc B580 (12G) are as follows:
 
 Current known issues:
 
-. The latest GPU driver (101.8626) results in worse text-to-image performance & compatibility compared to the previous version.
+. If performance degrades after updating the driver, it is recommended to choose "Clean Install" when installing the driver;
+or even further, use
+https://www.wagnardsoft.com/display-driver-uninstaller-ddu[DDU]
+to completely uninstall the old driver before performing a clean installation.
 
 . Once VRAM overflows, the program crashes or freezes and needs to be restarted. Adding the `--disable-smart-memory` parameter by default alleviates this issue.
 
@@ -143,11 +146,6 @@ Current known issues:
 
 ** Closing GPU-accelerated programs (e.g., browsers) can free up some VRAM. After closing the browser, the program continues to run, and you can check the generation progress in the log window.
 
-. For ComfyUI text-to-image generation specifically, XPU performance on Windows is comprehensively inferior to Linux, and this has not improved significantly over several versions (PyTorch & drivers).
-Conversely, on Linux, each version shows visible improvements, and the performance gap continues to widen.
-If you plan to use ComfyUI heavily on Intel GPUs, consider using a Linux system (Fedora is recommended first, followed by the latest Ubuntu).
-
-** https://github.com/YanWenKun/ComfyUI-Docker/tree/main/xpu[Docker image for XPU]
 
 ## Usage Tips
 

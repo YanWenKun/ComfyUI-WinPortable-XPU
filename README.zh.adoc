@@ -132,7 +132,10 @@ image::docs/screenshot-launcher.zh.webp["启动器截图"]
 
 目前已知问题：
 
-. 当前英特尔显卡驱动 `101.8626` 的文生图性能与兼容性均较上一版有所倒退。
+. 如更新驱动导致性能倒退，建议在安装驱动时选择“全新安装”；
+或者更进一步，使用
+https://www.wagnardsoft.com/display-driver-uninstaller-ddu[DDU]
+彻底卸载旧驱动，再进行全新安装。
 
 . 一旦显存溢出，程序即崩溃或假死，需要重新启动。默认添加参数 `--disable-smart-memory` 后有所缓解。
 
@@ -142,11 +145,6 @@ image::docs/screenshot-launcher.zh.webp["启动器截图"]
 
 ** 关闭使用 GPU 加速的程序（比如浏览器）可释放一部分显存。关闭浏览器后程序仍然在运行，可在日志窗口查看生成进度。
 
-. 仅就 ComfyUI 文生图而言，XPU 在 Windows 下的性能表现全面不如 Linux，且历经数个版本的 PyTorch 与驱动仍未有明显改善。
-相反， 在 Linux 下每个版本都有可见提升，差距渐大。
-如打算在 Intel GPU 上重度使用 ComfyUI，建议考虑使用 Linux 系统（优先推荐 Fedora，其次推荐最新版 Ubuntu）。
-
-** https://github.com/YanWenKun/ComfyUI-Docker/tree/main/xpu-cn[用于 XPU 的 ComfyUI Docker 镜像]
 
 ## 使用技巧
 
