@@ -119,11 +119,11 @@ image::docs/screenshot-launcher.zh.webp["启动器截图"]
 |FLUX.1 Krea
 |🆗 正常
 
-|FLUX.2 [Klein] 9B
+|FLUX.2 [Klein] 4B
 |🆗 正常
 
 |Z-Image Turbo
-|🆗 首次运行缓慢；图像尺寸过大易造成假死
+|🆗 首次运行缓慢
 
 |Qwen Image 2512
 |❌ 无法加载
