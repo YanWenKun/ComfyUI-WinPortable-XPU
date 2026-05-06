@@ -18,7 +18,7 @@ https://github.com/YanWenKun/ComfyUI-Windows-Portable/tree/v8.1[ComfyUI-Windows-
 [cols="1,3"]
 |===
 | Arc Battlemage
-| B580, B570, B60, B50
+| B580, B570, B70, B60, B50
 
 | Arc Alchemist
 | A770, A750, A580, A770M, A730M, A550M, Flex 170
