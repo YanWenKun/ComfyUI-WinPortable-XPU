@@ -118,7 +118,7 @@ Test results on Arc B580 (12G) are as follows:
 |🆗 Good
 
 |FLUX.1 Krea
-|🆗 Good
+|❌ Fail to VAE decode
 
 |FLUX.2 [Klein] 4B
 |🆗 Good

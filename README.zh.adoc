@@ -117,7 +117,7 @@ image::docs/screenshot-launcher.zh.webp["启动器截图"]
 |🆗 正常
 
 |FLUX.1 Krea
-|🆗 正常
+|❌ VAE 解码失败
 
 |FLUX.2 [Klein] 4B
 |🆗 正常
