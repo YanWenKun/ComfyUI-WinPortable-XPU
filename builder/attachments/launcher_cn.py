@@ -17,6 +17,7 @@ def save_config(args):
         "hf_token": args.hf_token,
         "pip_index_url": args.pip_index_url,
         "hf_endpoint": args.hf_endpoint,
+        "github_endpoint": args.github_endpoint,
         "disable_auto_launch": args.disable_auto_launch,
         "disable_smart_memory": args.disable_smart_memory,
         "lowvram": args.lowvram,
@@ -108,6 +109,12 @@ def main():
                          help='国内用户推荐 https://hf-mirror.com',
                          default=saved_config.get("hf_endpoint", "https://hf-mirror.com") if saved_config else "https://hf-mirror.com")
     
+    # GitHub 镜像设置（文本框）
+    env_tab.add_argument('--github_endpoint', 
+                         metavar='GitHub 镜像地址', 
+                         help='用于 ComfyUI-Manager。国内用户推荐 https://gh-proxy.org/https://github.com',
+                         default=saved_config.get("github_endpoint", "https://gh-proxy.org/https://github.com") if saved_config else "https://gh-proxy.org/https://github.com")
+
     # 启动参数配置 Tab
     launch_tab = parser.add_argument_group('启动参数配置', 
                                            '配置 ComfyUI 的启动参数',
@@ -160,6 +167,9 @@ def main():
 
     # 设置 HuggingFace 镜像
     os.environ['HF_ENDPOINT'] = args.hf_endpoint
+
+    # 设置 GitHub 镜像
+    os.environ['GITHUB_ENDPOINT'] = args.github_endpoint
 
     # 设置 HuggingFace 缓存目录
     os.environ['HF_HUB_CACHE'] = os.path.join(os.getcwd(), 'HuggingFaceHub')

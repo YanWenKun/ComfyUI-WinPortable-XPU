@@ -17,6 +17,7 @@ def save_config(args):
         "hf_token": args.hf_token,
         "pip_index_url": args.pip_index_url,
         "hf_endpoint": args.hf_endpoint,
+        "github_endpoint": args.github_endpoint,
         "disable_auto_launch": args.disable_auto_launch,
         "disable_smart_memory": args.disable_smart_memory,
         "lowvram": args.lowvram,
@@ -72,6 +73,12 @@ def main():
                          help='If left empty, the default is https://huggingface.co/',
                          default=saved_config.get("hf_endpoint", "") if saved_config else '')
     
+    # GitHub Mirror Settings (Text Box)
+    env_tab.add_argument('--github_endpoint', 
+                         metavar='GitHub Mirror URL', 
+                         help='Used by ComfyUI-Manager. If left empty, the default is https://github.com',
+                         default=saved_config.get("github_endpoint", "") if saved_config else '')
+
     # Launch Parameter Configuration Tab
     launch_tab = parser.add_argument_group('Launch Parameter Configuration', 
                                            'Configure the launch parameters for ComfyUI',
@@ -124,6 +131,9 @@ def main():
 
     # Set HuggingFace mirror
     os.environ['HF_ENDPOINT'] = args.hf_endpoint
+
+    # Set GitHub mirror
+    os.environ['GITHUB_ENDPOINT'] = args.github_endpoint
 
     # Set HuggingFace cache directory
     os.environ['HF_HUB_CACHE'] = os.path.join(os.getcwd(), 'HuggingFaceHub')
